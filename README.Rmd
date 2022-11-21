@@ -1,0 +1,69 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# TVTmatching
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The `TVTmatching` is an implement of a matching algorithm with time-varying treatment. Each case is assign to one or several controls such that their time "at risk of the treatment" matches.
+
+## Installation
+
+You can install the development version of `TVTmatching` like so:
+
+``` r
+remotes::intall_github("jaromilfrossard/TVTmatching")
+```
+
+## Example
+
+You can explore the control candidates for each case using:
+
+```{r summary}
+library(TVTmatching)
+data("tvtdata")
+tvt_sum <- tvt_summary_cases(tvtdata,
+                             date_statrisk=stos,
+                             date_treatna=treatna,
+                             date_eos=eos,
+                             state_eos=eos01, by = fct)
+tvt_sum
+```
+
+You can match using dates:
+
+```{r date}
+set.seed(42)
+tvt_match<- tvt_matching_date(tvtdata,stos,treatna,eos,eos01)
+tvt_match
+```
+
+If you have data in time you can use:
+
+```{r num}
+set.seed(42)
+tvtdata_num <- tvt_date2numeric(tvtdata,
+                                date_statrisk = stos,
+                                date_treatna = treatna,
+                                date_eos = eos,
+                                state_eos = eos01)
+tvt_match2 <- tvt_matching_num(tvtdata_num,
+                               time_atrisk = time_atrisk,
+                               time_eos = time_eos,
+                               state_eos = state_eos,
+                               state_treat = state_treat)
+tvt_match2
+```
