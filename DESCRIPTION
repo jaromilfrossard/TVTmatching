@@ -4,8 +4,8 @@ Title: Match with time-varying treatment
 Version: 0.1.0
 Author: Jaromil Frossard <jaromil.frossard@gmail.com>
 Maintainer: Jaromil Frossard <jaromil.frossard@gmail.com>
-Description: Perform a matching of controls to treated when the treatmen vary after the start of the study by considering the time "at risk of the treatment".
-License: MIT + file LICENSE
+Description: Algorithm for randomly matching controls to cases when the treatment varies over time. The algorithm considers the time "at risk of the treatment".
+License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
 Suggests: 

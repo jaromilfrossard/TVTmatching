@@ -67,7 +67,7 @@ tvt_matching_date <- function(data,
 
 #'@rdname tvt
 #'@export
-#'@importFrom dplyr bind_rows
+#'@importFrom dplyr bind_rows all_of
 tvt_matching_num <- function(data, time_atrisk,time_eos,state_treat,state_eos,
                              ratio = 1,
                              by = NULL){
@@ -93,7 +93,8 @@ tvt_matching_num <- function(data, time_atrisk,time_eos,state_treat,state_eos,
 
 
   # create grouping (weird because of lazy eval)
-  grp <- dplyr::select(data,{{by}})
+  grp <- data%>%
+    dplyr::select(all_of({{by}}))
   if(ncol(grp)==0L){
     grp <-  rep(1L,ncase)
   }else{
@@ -147,7 +148,7 @@ tvt_matching_num <- function(data, time_atrisk,time_eos,state_treat,state_eos,
     #create case tibble
     tb_case <- tibble(
       group = groupi,
-      row_id = id_treated_i,
+      id_row = id_treated_i,
       treat_tv = "treatment",
       time_eos_tv = time_eos_centeri[id_treated_i],
       state_eos_tv = state_eos[id_treated_i])
@@ -165,7 +166,7 @@ tvt_matching_num <- function(data, time_atrisk,time_eos,state_treat,state_eos,
     #create control tibble
     tb_control <- tibble(
       group = rep(groupi,ratio),
-      row_id = ids_contri,
+      id_row = ids_contri,
       treat_tv = rep("control",ratio),
       time_eos_tv = time_eos_centeri[ids_contri],
       state_eos_tv = state_eos_i[ids_contri]
@@ -180,103 +181,6 @@ tvt_matching_num <- function(data, time_atrisk,time_eos,state_treat,state_eos,
 
 
 }
-
-
-
-
-
-
-
-
-# # nested case control
-# ncc_old <- function(treat_time,treatment,data,ratio = 1, by = NULL){
-#
-#
-#   mc <- match.call()
-#
-#   # extract data
-#   treateds <- pull(data,{{treatment}})
-#   times <- pull(data,{{treat_time}})
-#
-#   #ncase and treat
-#   ncase <- nrow(data)
-#   ntreateds <- sum(treateds)
-#
-#
-#   #create grouping (weird because of lazy eval)
-#   grp <- dplyr::select(data,{{by}})
-#   if(ncol(grp)==0L){
-#     grp <-  rep(1L,ncase)
-#   }else{
-#     grp <-
-#       grp%>%
-#       interaction()
-#   }
-#
-#
-#
-#
-#   # warning ratio
-#   if(ntreateds*ratio>ncase){stop(paste0("Sample size (",ncase,") is too small for the number of treated (",ntreateds,") and the ratio (",ratio,")." ))}
-#
-#   # prep loop
-#
-#   ids_treated <- which(treateds==1)
-#   ids_controls <- seq_len(ncase)
-#   list_output <- list()
-#
-#   rand_treated <- sample(ids_treated)
-#
-#
-#
-#   for(groupi in seq_along(rand_treated)){
-#     # treated i
-#     id_treated_i <- rand_treated[groupi]
-#     #remove event i (for all loop)
-#     ids_controls <- ids_controls[ids_controls!=id_treated_i]
-#
-#     #select time (for loop i)
-#     select_time <- times[ids_controls]>=times[id_treated_i]
-#
-#     #select grp (for loop i)
-#     select_grp <- grp[ids_controls]==grp[id_treated_i]
-#
-#     ids_contri <- ids_controls[select_time& select_grp]
-#     #remove groups (for loop i)
-#
-#     #sample in controls
-#     ids_contri <- sample(ids_contri,ratio)
-#
-#     #create case tibble
-#     tb_case <- tibble(
-#       group = groupi,
-#       row_id = id_treated_i,
-#       ncc_treat = "treatment",
-#       ncc_treat_time = times[id_treated_i])
-#
-#     #create control tibble
-#     tb_control <- tibble(
-#       group = rep(groupi,ratio),
-#       row_id = ids_contri,
-#       ncc_treat = rep("control",ratio),
-#       ncc_treat_time = times[id_treated_i])
-#
-#     list_output[[groupi]] <- bind_rows(tb_case,tb_control)
-#
-#
-#   }
-#
-#   do.call("rbind",list_output)
-#
-#
-# }
-
-
-
-
-
-
-
 
 
 
