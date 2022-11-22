@@ -55,3 +55,4 @@ Rubin, D.B. (1987). Multiple Imputation for Nonresponse in Surveys. New York: Jo
 
 Van Buuren, S., Groothuis-Oudshoorn, K., & Robitzsch, A. (2019). Package ‘mice’: multivariate imputation by chained equations. CRAN Repos.
 }
+\concept{pooling}

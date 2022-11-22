@@ -2,3 +2,19 @@ url: https://jaromilfrossard.github.io/TVTmatching/
 template:
   bootstrap: 5
 
+reference:
+- title: Time-varying treatment function
+  desc: >
+   Main functions.
+  contents:
+   - has_concept("tvt")
+- title: Pooling estimates
+  desc: >
+   Functions to pool estimates.
+  contents:
+   - has_concept("pooling")
+- title: Dataset
+  desc: >
+   Descriptions of the dataset
+  contents:
+   - has_concept("data")

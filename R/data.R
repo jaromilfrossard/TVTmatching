@@ -11,6 +11,7 @@
 #'    \item{eos01}{Integer. State at the end of the study.}
 #'    \item{fct}{Character. A 2 level factor.}
 #' }
+#' @family data
 "tvtdata"
 
 
@@ -30,4 +31,5 @@
 #'    \item{fct_4lvl}{Character. A 4 level factor.}
 #'     \item{xcov}{Integer. A covariate of numeric.}
 #' }
+#' @family data
 "tvtdata2"

@@ -2,6 +2,7 @@
 #' @importFrom dplyr select pull bind_cols
 #' @importFrom lubridate ddays
 #' @importFrom tibble tibble
+#'
 #' @export
 tvt_date2numeric <- function(data,
                              date_statrisk,

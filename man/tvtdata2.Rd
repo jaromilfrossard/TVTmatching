@@ -24,4 +24,9 @@ tvtdata2
 \description{
 A simulated dataset
 }
+\seealso{
+Other data: 
+\code{\link{tvtdata}}
+}
+\concept{data}
 \keyword{datasets}

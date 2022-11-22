@@ -92,3 +92,4 @@ tvt_match<- tvt_matching_date(tvtdata,stos,treatna,eos,eos01)
 set.seed(42)
 tvt_match2 <- tvt_matching_num(tvtdata_num,time_atrisk,time_eos,state_eos,state_treat)
 }
+\concept{tvt}

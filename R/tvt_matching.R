@@ -20,6 +20,7 @@
 #' @export
 #'
 #' @name tvt
+#' @family tvt
 #' @examples
 #'
 #' data("tvtdata")
@@ -34,6 +35,7 @@
 
 
 #' @rdname tvt
+#'
 #' @export
 tvt_matching_date <- function(data,
                         date_statrisk,

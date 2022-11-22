@@ -8,7 +8,7 @@
 #' @details This function is adapted from the \code{mice::pool()} function.
 #'
 #' @return A data frame with the pooled results
-#' @export
+#'
 #' @importFrom dplyr transmute group_by summarise case_when n
 #' @importFrom purrr pmap
 #' @importFrom stats pt var
@@ -41,6 +41,8 @@
 #' term <- names(lestim[[1]])
 #' pooling_rubin(estim,var,df,term)
 #' }
+#' @export
+#' @family pooling
 pooling_rubin <- function(estimate,std.error,df = NA_real_, term = NULL){
 
   if(is.null(term)){
