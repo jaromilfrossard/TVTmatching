@@ -7,3 +7,4 @@ create_data.R
 .Rdata
 .httr-oauth
 .DS_Store
+docs

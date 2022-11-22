@@ -4,3 +4,7 @@
 test.R
 create_data.R
 ^README\.Rmd$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^\.github$

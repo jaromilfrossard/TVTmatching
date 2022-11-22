@@ -23,5 +23,6 @@ Imports:
     purrr,
     tidyr,
     rlang
-URL: https://github.com/jaromilfrossard/TVTmatching
+URL: https://github.com/jaromilfrossard/TVTmatching,
+    https://jaromilfrossard.github.io/TVTmatching/
 BugReports: https://github.com/jaromilfrossard/TVTmatching/issues
