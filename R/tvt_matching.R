@@ -1,17 +1,17 @@
-#' Matching with time-varying treatment
+#' Matching controls to cases with time-varying treatment
 #'
-#' @param data A data frame
+#' @param data A data frame.
 #' @param date_statrisk Column names indicating the date when patients start to be at risk of the treatment.
 #' @param date_treatna Column names indicating the date of the start of the treatment and NA's for untreated subjects.
-#' @param date_eos Column names indicating the date of the end of the study
-#' @param state_eos Column names indicating the state at the end of the study
+#' @param date_eos Column names indicating the date of the end of the study.
+#' @param state_eos Column names indicating the state at the end of the study.
 #' @param date_eoatrisk Column names indicating the date when patient end to be "at risk of the treatment". Specify \code{date_eos} the ending of the "at risk of the treatment" period corresponds to the end of the study.
 #' @param ratio Integer. The number of controls per cases.
 #' @param by Column names indicating a grouping factor for the matching.
 #' @param time_atrisk Column names with integer representing the length of the "at risk of the treatment" period.
 #' @param time_eos Column names with integer representing the length of the study.
-#' @param state_treat Column names indicating if the subject experimented the treatment
-#' @param state_eos Column names indicating the state at the end of the study
+#' @param state_treat Column names indicating if the subject experimented the treatment.
+#' @param state_eos Column names indicating the state at the end of the study.
 #'
 #' @return
 #' The \code{tvt_summary_cases()} function return a tibble with information of control candidates for each case.

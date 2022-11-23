@@ -7,7 +7,7 @@
 \alias{tvt_matching_date}
 \alias{tvt_matching_num}
 \alias{tvt_summary_cases}
-\title{Matching with time-varying treatment}
+\title{Matching controls to cases with time-varying treatment}
 \usage{
 tvt_date2numeric(
   data,
@@ -50,15 +50,15 @@ tvt_summary_cases(
 )
 }
 \arguments{
-\item{data}{A data frame}
+\item{data}{A data frame.}
 
 \item{date_statrisk}{Column names indicating the date when patients start to be at risk of the treatment.}
 
 \item{date_treatna}{Column names indicating the date of the start of the treatment and NA's for untreated subjects.}
 
-\item{date_eos}{Column names indicating the date of the end of the study}
+\item{date_eos}{Column names indicating the date of the end of the study.}
 
-\item{state_eos}{Column names indicating the state at the end of the study}
+\item{state_eos}{Column names indicating the state at the end of the study.}
 
 \item{date_eoatrisk}{Column names indicating the date when patient end to be "at risk of the treatment". Specify \code{date_eos} the ending of the "at risk of the treatment" period corresponds to the end of the study.}
 
@@ -70,7 +70,7 @@ tvt_summary_cases(
 
 \item{time_eos}{Column names with integer representing the length of the study.}
 
-\item{state_treat}{Column names indicating if the subject experimented the treatment}
+\item{state_treat}{Column names indicating if the subject experimented the treatment.}
 }
 \value{
 The \code{tvt_summary_cases()} function return a tibble with information of control candidates for each case.
@@ -78,7 +78,7 @@ The \code{tvt_date2numeric()} convert the encoding of the event from dates to nu
 The \code{tvt_matching_date()} and \code{tvt_matching_num()} perform the matching algorithm.
 }
 \description{
-Matching with time-varying treatment
+Matching controls to cases with time-varying treatment
 }
 \examples{
 
