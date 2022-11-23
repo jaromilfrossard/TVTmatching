@@ -37,10 +37,11 @@ You can explore the control candidates for each case using:
 library(TVTmatching)
 data("tvtdata")
 tvt_sum <- tvt_summary_cases(tvtdata,
-                             date_statrisk=stos,
-                             date_treatna=treatna,
-                             date_eos=eos,
-                             state_eos=eos01, by = fct)
+                             date_statrisk = stos,
+                             date_treatna = treatna,
+                             date_eos = eos,
+                             state_eos = eos01, 
+                             by = fct)
 tvt_sum
 ```
 
@@ -48,7 +49,11 @@ You can match using dates:
 
 ```{r date}
 set.seed(42)
-tvt_match<- tvt_matching_date(tvtdata,stos,treatna,eos,eos01)
+tvt_match<- tvt_matching_date(data = tvtdata,
+                              date_statrisk = stos,
+                              date_treatna = treatna,
+                              date_eos = eos,
+                              state_eos = eos01)
 tvt_match
 ```
 
@@ -56,12 +61,12 @@ If you have data in time you can use:
 
 ```{r num}
 set.seed(42)
-tvtdata_num <- tvt_date2numeric(tvtdata,
+tvtdata_num <- tvt_date2numeric(data = tvtdata,
                                 date_statrisk = stos,
                                 date_treatna = treatna,
                                 date_eos = eos,
                                 state_eos = eos01)
-tvt_match2 <- tvt_matching_num(tvtdata_num,
+tvt_match2 <- tvt_matching_num(data = tvtdata_num,
                                time_atrisk = time_atrisk,
                                time_eos = time_eos,
                                state_eos = state_eos,

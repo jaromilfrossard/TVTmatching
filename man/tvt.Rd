@@ -50,27 +50,27 @@ tvt_summary_cases(
 )
 }
 \arguments{
-\item{data}{a data frame}
+\item{data}{A data frame}
 
-\item{date_statrisk}{column names with the date when patients start to be at risk of the treatment.}
+\item{date_statrisk}{Column names indicating the date when patients start to be at risk of the treatment.}
 
-\item{date_treatna}{column names with the date of the start of the treatment and NA's for untreated subjects.}
+\item{date_treatna}{Column names indicating the date of the start of the treatment and NA's for untreated subjects.}
 
-\item{date_eos}{column names with the date of the end of the study}
+\item{date_eos}{Column names indicating the date of the end of the study}
 
-\item{state_eos}{column names indicating the state at the end of the study}
+\item{state_eos}{Column names indicating the state at the end of the study}
 
-\item{date_eoatrisk}{column names with the date when patient end to be "at risk of the treatment". Specify \code{date_eos} the ending of the "at risk of the treatment" period corresponds to the end of the study.}
+\item{date_eoatrisk}{Column names indicating the date when patient end to be "at risk of the treatment". Specify \code{date_eos} the ending of the "at risk of the treatment" period corresponds to the end of the study.}
 
-\item{ratio}{Integer. The controls per cases.}
+\item{ratio}{Integer. The number of controls per cases.}
 
-\item{by}{column names indicating a grouping factor for the matching.}
+\item{by}{Column names indicating a grouping factor for the matching.}
 
-\item{time_atrisk}{column names with integer representing the length of the "at risk of the treatment" period.}
+\item{time_atrisk}{Column names with integer representing the length of the "at risk of the treatment" period.}
 
-\item{time_eos}{column names with integer representing the length of the study.}
+\item{time_eos}{Column names with integer representing the length of the study.}
 
-\item{state_treat}{column names indicating if the subject experimented the treatment}
+\item{state_treat}{Column names indicating if the subject experimented the treatment}
 }
 \value{
 The \code{tvt_summary_cases()} function return a tibble with information of control candidates for each case.

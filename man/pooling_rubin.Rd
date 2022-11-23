@@ -2,7 +2,7 @@
 % Please edit documentation in R/pooling_rubin.R
 \name{pooling_rubin}
 \alias{pooling_rubin}
-\title{Pool estimate using the Rubin Rules}
+\title{Pool estimates using the Rubin Rules}
 \usage{
 pooling_rubin(estimate, std.error, df = NA_real_, term = NULL)
 }
@@ -16,10 +16,10 @@ pooling_rubin(estimate, std.error, df = NA_real_, term = NULL)
 \item{term}{Character. Indicates the names of the estimates.}
 }
 \value{
-A data frame with the pooled results
+A data frame with the pooled results.
 }
 \description{
-Pool estimate using the Rubin Rules
+Pool estimates using the Rubin Rules
 }
 \details{
 This function is adapted from the \code{mice::pool()} function.
