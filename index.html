@@ -61,19 +61,19 @@
 <div class="page-header"><h1 id="tvtmatching">TVTmatching<a class="anchor" aria-label="anchor" href="#tvtmatching"></a>
 </h1></div>
 <!-- badges: start -->
-<!-- badges: end -->
-<p>The <code>TVTmatching</code> is an implement of a matching algorithm with time-varying treatment. Each case is assign to one or several controls such that they match to their time “at risk of the treatment”.</p>
+
+<p>The <code>TVTmatching</code> is an implement of a matching algorithm with time-varying treatment. Each case is assign to one or several controls such that their time “at risk of the treatment” matches.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>You can install the development version of TVTmatching like so:</p>
+<p>You can install the development version of <code>TVTmatching</code> like so:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">intall_github</span><span class="op">(</span><span class="st">"jaromilfrossard/TVTmatching"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
 </h2>
-<p>You can explore the controls candidate for each case using:</p>
+<p>You can explore the control candidates for each case using:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jaromilfrossard/TVTmatching" class="external-link">TVTmatching</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"tvtdata"</span><span class="op">)</span></span>
@@ -99,7 +99,7 @@
 <span><span class="va">tvt_match</span><span class="op">&lt;-</span> <span class="fu"><a href="reference/tvt.html">tvt_matching_date</a></span><span class="op">(</span><span class="va">tvtdata</span>,<span class="va">stos</span>,<span class="va">treatna</span>,<span class="va">eos</span>,<span class="va">eos01</span><span class="op">)</span></span>
 <span><span class="va">tvt_match</span></span>
 <span><span class="co">#&gt; # A tibble: 8 × 5</span></span>
-<span><span class="co">#&gt;   group row_id treat_tv  time_eos_tv state_eos_tv</span></span>
+<span><span class="co">#&gt;   group id_row treat_tv  time_eos_tv state_eos_tv</span></span>
 <span><span class="co">#&gt;   &lt;int&gt;  &lt;int&gt; &lt;chr&gt;           &lt;dbl&gt;        &lt;int&gt;</span></span>
 <span><span class="co">#&gt; 1     1      1 treatment         365            1</span></span>
 <span><span class="co">#&gt; 2     1      5 control           396            0</span></span>
@@ -124,7 +124,7 @@
 <span>                               state_treat <span class="op">=</span> <span class="va">state_treat</span><span class="op">)</span></span>
 <span><span class="va">tvt_match2</span></span>
 <span><span class="co">#&gt; # A tibble: 8 × 5</span></span>
-<span><span class="co">#&gt;   group row_id treat_tv  time_eos_tv state_eos_tv</span></span>
+<span><span class="co">#&gt;   group id_row treat_tv  time_eos_tv state_eos_tv</span></span>
 <span><span class="co">#&gt;   &lt;int&gt;  &lt;int&gt; &lt;chr&gt;           &lt;dbl&gt;        &lt;int&gt;</span></span>
 <span><span class="co">#&gt; 1     1      1 treatment         365            1</span></span>
 <span><span class="co">#&gt; 2     1      5 control           396            0</span></span>
@@ -167,7 +167,12 @@
 </ul>
 </div>
 
-
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://app.codecov.io/gh/jaromilfrossard/TVTmatching?branch=master" class="external-link"><img src="https://codecov.io/gh/jaromilfrossard/TVTmatching/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
+</ul>
+</div>
 
   </aside>
 </div>
