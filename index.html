@@ -78,10 +78,11 @@
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jaromilfrossard/TVTmatching" class="external-link">TVTmatching</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"tvtdata"</span><span class="op">)</span></span>
 <span><span class="va">tvt_sum</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/tvt.html">tvt_summary_cases</a></span><span class="op">(</span><span class="va">tvtdata</span>,</span>
-<span>                             date_statrisk<span class="op">=</span><span class="va">stos</span>,</span>
-<span>                             date_treatna<span class="op">=</span><span class="va">treatna</span>,</span>
-<span>                             date_eos<span class="op">=</span><span class="va">eos</span>,</span>
-<span>                             state_eos<span class="op">=</span><span class="va">eos01</span>, by <span class="op">=</span> <span class="va">fct</span><span class="op">)</span></span>
+<span>                             date_statrisk <span class="op">=</span> <span class="va">stos</span>,</span>
+<span>                             date_treatna <span class="op">=</span> <span class="va">treatna</span>,</span>
+<span>                             date_eos <span class="op">=</span> <span class="va">eos</span>,</span>
+<span>                             state_eos <span class="op">=</span> <span class="va">eos01</span>, </span>
+<span>                             by <span class="op">=</span> <span class="va">fct</span><span class="op">)</span></span>
 <span><span class="va">tvt_sum</span></span>
 <span><span class="co">#&gt; # A tibble: 4 × 10</span></span>
 <span><span class="co">#&gt;   id_row time_a…¹ time_…² state…³ state…⁴ fct   data_c…⁵ n_con…⁶ state…⁷ state…⁸</span></span>
@@ -96,7 +97,11 @@
 <p>You can match using dates:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">42</span><span class="op">)</span></span>
-<span><span class="va">tvt_match</span><span class="op">&lt;-</span> <span class="fu"><a href="reference/tvt.html">tvt_matching_date</a></span><span class="op">(</span><span class="va">tvtdata</span>,<span class="va">stos</span>,<span class="va">treatna</span>,<span class="va">eos</span>,<span class="va">eos01</span><span class="op">)</span></span>
+<span><span class="va">tvt_match</span><span class="op">&lt;-</span> <span class="fu"><a href="reference/tvt.html">tvt_matching_date</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">tvtdata</span>,</span>
+<span>                              date_statrisk <span class="op">=</span> <span class="va">stos</span>,</span>
+<span>                              date_treatna <span class="op">=</span> <span class="va">treatna</span>,</span>
+<span>                              date_eos <span class="op">=</span> <span class="va">eos</span>,</span>
+<span>                              state_eos <span class="op">=</span> <span class="va">eos01</span><span class="op">)</span></span>
 <span><span class="va">tvt_match</span></span>
 <span><span class="co">#&gt; # A tibble: 8 × 5</span></span>
 <span><span class="co">#&gt;   group id_row treat_tv  time_eos_tv state_eos_tv</span></span>
@@ -112,12 +117,12 @@
 <p>If you have data in time you can use:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">42</span><span class="op">)</span></span>
-<span><span class="va">tvtdata_num</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/tvt.html">tvt_date2numeric</a></span><span class="op">(</span><span class="va">tvtdata</span>,</span>
+<span><span class="va">tvtdata_num</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/tvt.html">tvt_date2numeric</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">tvtdata</span>,</span>
 <span>                                date_statrisk <span class="op">=</span> <span class="va">stos</span>,</span>
 <span>                                date_treatna <span class="op">=</span> <span class="va">treatna</span>,</span>
 <span>                                date_eos <span class="op">=</span> <span class="va">eos</span>,</span>
 <span>                                state_eos <span class="op">=</span> <span class="va">eos01</span><span class="op">)</span></span>
-<span><span class="va">tvt_match2</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/tvt.html">tvt_matching_num</a></span><span class="op">(</span><span class="va">tvtdata_num</span>,</span>
+<span><span class="va">tvt_match2</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/tvt.html">tvt_matching_num</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">tvtdata_num</span>,</span>
 <span>                               time_atrisk <span class="op">=</span> <span class="va">time_atrisk</span>,</span>
 <span>                               time_eos <span class="op">=</span> <span class="va">time_eos</span>,</span>
 <span>                               state_eos <span class="op">=</span> <span class="va">state_eos</span>,</span>
