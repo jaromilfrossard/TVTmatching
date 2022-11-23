@@ -8,3 +8,4 @@ create_data.R
 ^docs$
 ^pkgdown$
 ^\.github$
+^codecov\.yml$

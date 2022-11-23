@@ -7,7 +7,12 @@ test_that("Matching algorithm: censoring controls", {
   set.seed(42)
 
   tvt_new <-
-    tvt_matching_date(tvtdata2,date_statrisk = stos,treatna,eos,eos01)
+    tvt_matching_date(tvtdata2,
+                      date_statrisk = stos,
+                      date_treatna = treatna,
+                      date_eos=eos,
+                      state_eos=eos01,
+                      date_eoatrisk = eotreat)
 
   test01 <- tvt_new%>%
     bind_cols(tvtdata2%>%

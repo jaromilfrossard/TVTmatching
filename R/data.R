@@ -1,4 +1,4 @@
-#' Testing Data
+#' Small testing data
 #'
 #' A simulated dataset
 #'
@@ -15,7 +15,7 @@
 "tvtdata"
 
 
-#' Testing Data 2
+#' Large testing data
 #'
 #' A simulated dataset
 #'

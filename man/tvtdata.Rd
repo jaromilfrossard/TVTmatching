@@ -3,7 +3,7 @@
 \docType{data}
 \name{tvtdata}
 \alias{tvtdata}
-\title{Testing Data}
+\title{Small testing data}
 \format{
 a dataframe with 8 rows and 5 columns:
 

@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 # TVTmatching
 
 <!-- badges: start -->
+[![Codecov test coverage](https://codecov.io/gh/jaromilfrossard/TVTmatching/branch/master/graph/badge.svg)](https://app.codecov.io/gh/jaromilfrossard/TVTmatching?branch=master)
 <!-- badges: end -->
 
 The `TVTmatching` is an implement of a matching algorithm with time-varying treatment. Each case is assign to one or several controls such that their time "at risk of the treatment" matches.

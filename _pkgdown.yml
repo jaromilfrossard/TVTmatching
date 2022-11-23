@@ -5,12 +5,12 @@ template:
 reference:
 - title: Time-varying treatment function
   desc: >
-   Main functions.
+   Function to match controls to cases.
   contents:
    - has_concept("tvt")
 - title: Pooling estimates
   desc: >
-   Functions to pool estimates.
+   Functions for pooling estimates.
   contents:
    - has_concept("pooling")
 - title: Dataset

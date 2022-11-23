@@ -4,15 +4,18 @@
 # TVTmatching
 
 <!-- badges: start -->
+
+[![Codecov test
+coverage](https://codecov.io/gh/jaromilfrossard/TVTmatching/branch/master/graph/badge.svg)](https://app.codecov.io/gh/jaromilfrossard/TVTmatching?branch=master)
 <!-- badges: end -->
 
 The `TVTmatching` is an implement of a matching algorithm with
 time-varying treatment. Each case is assign to one or several controls
-such that they match to their time “at risk of the treatment”.
+such that their time “at risk of the treatment” matches.
 
 ## Installation
 
-You can install the development version of TVTmatching like so:
+You can install the development version of `TVTmatching` like so:
 
 ``` r
 remotes::intall_github("jaromilfrossard/TVTmatching")
@@ -20,7 +23,7 @@ remotes::intall_github("jaromilfrossard/TVTmatching")
 
 ## Example
 
-You can explore the controls candidate for each case using:
+You can explore the control candidates for each case using:
 
 ``` r
 library(TVTmatching)
@@ -50,7 +53,7 @@ set.seed(42)
 tvt_match<- tvt_matching_date(tvtdata,stos,treatna,eos,eos01)
 tvt_match
 #> # A tibble: 8 × 5
-#>   group row_id treat_tv  time_eos_tv state_eos_tv
+#>   group id_row treat_tv  time_eos_tv state_eos_tv
 #>   <int>  <int> <chr>           <dbl>        <int>
 #> 1     1      1 treatment         365            1
 #> 2     1      5 control           396            0
@@ -78,7 +81,7 @@ tvt_match2 <- tvt_matching_num(tvtdata_num,
                                state_treat = state_treat)
 tvt_match2
 #> # A tibble: 8 × 5
-#>   group row_id treat_tv  time_eos_tv state_eos_tv
+#>   group id_row treat_tv  time_eos_tv state_eos_tv
 #>   <int>  <int> <chr>           <dbl>        <int>
 #> 1     1      1 treatment         365            1
 #> 2     1      5 control           396            0

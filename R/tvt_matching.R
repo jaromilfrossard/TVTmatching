@@ -1,17 +1,17 @@
 #' Matching with time-varying treatment
 #'
-#' @param data a data frame
-#' @param date_statrisk column names with the date when patients start to be at risk of the treatment.
-#' @param date_treatna column names with the date of the start of the treatment and NA's for untreated subjects.
-#' @param date_eos column names with the date of the end of the study
-#' @param state_eos column names with the state at the end of the study
-#' @param date_eoatrisk column names with the date when patient end to be "at risk of the treatment". Specify \code{date_eos} the ending of the "at risk of the treatment" period corresponds to the end of the study.
-#' @param ratio Integer. The controls per cases.
-#' @param by column names indicating a grouping factor for the matching.
-#' @param time_atrisk column names with integer representing the length of the "at risk of the treatment" period.
-#' @param time_eos column names with integer representing the length of the study.
-#' @param state_treat column names indicating if the subject experimented the treatment
-#' @param state_eos column names indicating the state at the end of the study
+#' @param data A data frame
+#' @param date_statrisk Column names indicating the date when patients start to be at risk of the treatment.
+#' @param date_treatna Column names indicating the date of the start of the treatment and NA's for untreated subjects.
+#' @param date_eos Column names indicating the date of the end of the study
+#' @param state_eos Column names indicating the state at the end of the study
+#' @param date_eoatrisk Column names indicating the date when patient end to be "at risk of the treatment". Specify \code{date_eos} the ending of the "at risk of the treatment" period corresponds to the end of the study.
+#' @param ratio Integer. The number of controls per cases.
+#' @param by Column names indicating a grouping factor for the matching.
+#' @param time_atrisk Column names with integer representing the length of the "at risk of the treatment" period.
+#' @param time_eos Column names with integer representing the length of the study.
+#' @param state_treat Column names indicating if the subject experimented the treatment
+#' @param state_eos Column names indicating the state at the end of the study
 #'
 #' @return
 #' The \code{tvt_summary_cases()} function return a tibble with information of control candidates for each case.

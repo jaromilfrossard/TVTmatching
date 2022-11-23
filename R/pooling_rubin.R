@@ -1,4 +1,4 @@
-#' Pool estimate using the Rubin Rules
+#' Pool estimates using the Rubin Rules
 #'
 #' @param estimate List. Each element of the list is a vector of pseudo estimates of length \eqn{m}.
 #' @param std.error List. The standard error of the estimates.
@@ -7,7 +7,7 @@
 #'
 #' @details This function is adapted from the \code{mice::pool()} function.
 #'
-#' @return A data frame with the pooled results
+#' @return A data frame with the pooled results.
 #'
 #' @importFrom dplyr transmute group_by summarise case_when n
 #' @importFrom purrr pmap

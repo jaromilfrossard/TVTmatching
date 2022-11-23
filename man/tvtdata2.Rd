@@ -3,7 +3,7 @@
 \docType{data}
 \name{tvtdata2}
 \alias{tvtdata2}
-\title{Testing Data 2}
+\title{Large testing data}
 \format{
 a dataframe with 200 rows and 9 columns:
 
