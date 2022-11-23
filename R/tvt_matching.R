@@ -152,6 +152,7 @@ tvt_matching_num <- function(data, time_atrisk,time_eos,state_treat,state_eos,
       group = groupi,
       id_row = id_treated_i,
       treat_tv = "treatment",
+      time_atrisk = time_atrisk[id_treated_i],
       time_eos_tv = time_eos_centeri[id_treated_i],
       state_eos_tv = state_eos[id_treated_i])
 
@@ -161,7 +162,7 @@ tvt_matching_num <- function(data, time_atrisk,time_eos,state_treat,state_eos,
 
     which_censored <- state_treat==1L
     state_eos_i <- state_eos
-    state_eos_i[which_censored]=0L
+    state_eos_i[which_censored] <- 0L
     time_eos_centeri[which_censored]<-time_atrisk_centeri[which_censored]
 
 
@@ -170,6 +171,7 @@ tvt_matching_num <- function(data, time_atrisk,time_eos,state_treat,state_eos,
       group = rep(groupi,ratio),
       id_row = ids_contri,
       treat_tv = rep("control",ratio),
+      time_atrisk = time_atrisk[id_treated_i],
       time_eos_tv = time_eos_centeri[ids_contri],
       state_eos_tv = state_eos_i[ids_contri]
       )

@@ -18,3 +18,4 @@ test_that("Summary of the cases: checking control per cases", {
 
 
 })
+
