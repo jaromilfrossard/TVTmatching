@@ -2,7 +2,7 @@ pandoc: 2.19.2
 pkgdown: 2.0.6
 pkgdown_sha: ~
 articles: {}
-last_built: 2022-11-23T12:31Z
+last_built: 2022-11-23T14:41Z
 urls:
   reference: https://jaromilfrossard.github.io/TVTmatching/reference
   article: https://jaromilfrossard.github.io/TVTmatching/articles
