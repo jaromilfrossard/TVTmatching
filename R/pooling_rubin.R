@@ -50,29 +50,34 @@ pooling_rubin <- function(estimate,std.error,df = NA_real_, term = NULL){
   }
 
 
-
-  tibble(
-    mi = seq_along(estimate),
-    estimate = estimate,
-    std.error = std.error)%>%
+  out<-
+    tibble(
+      mi = seq_along(estimate),
+      estimate = estimate,
+      std.error = std.error)%>%
     transmute(mi= .data$mi,
-              temp = pmap(list(.data$estimate,.data$std.error),
+              temp = pmap(list(estimate,std.error),
                           function(ei,stdi){
                             tibble(
                               term = term,
                               estimate = ei,
                               std.error = stdi)}))%>%
     unnest(.data$temp)%>%
-    group_by(term)%>%
+    group_by(.data$term)%>%
     summarise(
       m = n(),
       qbar = mean(.data$estimate),
       ubar = mean(.data$std.error^2),
       b = var(.data$estimate)
-    )%>%
+    )
+
+  out <- out[match(out$term,term),,drop=F]
+
+
+  out%>%
     mutate(t = .data$ubar + (1 + 1/.data$m) * .data$b,
-           dfcom = case_when(length(.data$df)==n()~.data$df,
-                             TRUE~rep(.data$df,n())),
+           dfcom = case_when(length(df)==n()~df,
+                             TRUE~rep(df,n())),
            df = barnard.rubin(.data$m,.data$b,.data$t,.data$dfcom),
            riv = (1 + 1/.data$m) * .data$b/.data$ubar,
            lambda = (1 + 1/.data$m) * .data$b/.data$t,
